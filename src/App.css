@@ -1,5 +1,7 @@
 body {
     font-family: 'Mukta', sans-serif;
+    background: linear-gradient(141deg, #9F838C 0%, #BAABBD 51%, #C9C9EE 75%);
+    height: 100vh;
 }
 
 .App {
@@ -13,6 +15,7 @@ body {
     width: 100%;
     text-align: center;
     background-color: #9F838C;
+    border: 2px solid whitesmoke;
     border-radius: 1rem;
     margin: 1rem;
 }
@@ -81,5 +84,6 @@ button:hover {
     align-items: center;
     flex-wrap: wrap;
     border-radius: 1rem;
+    border: 2px solid whitesmoke;
 }
 
