@@ -39,11 +39,29 @@ class App extends React.Component {
     });
   };
 
-  // toggleTask = (todos, index) => {
-  //   this.setState(todos => ({
-  //     completed: {}
-  //   }))
-  // }
+  toggleTask = taskId => {
+    console.log('ss: index.js: App: toggleTask: taskId', taskId);
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === taskId) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        }
+        return todo;
+      })
+    })
+  }
+
+  clearCompleted = () => {
+    console.log('ss: index.js: App: clearCompleted');
+    this.setState({
+      todos: this.state.todos.filter(todo => {
+        return !todo.completed;
+      })
+    });
+  };
 
   render() {
     return (
@@ -51,8 +69,14 @@ class App extends React.Component {
         <div className='header'>
           <h1>Shayne's MVP Todo List!!</h1>
           <h2>Todo List</h2>
-          <TodoList todos={this.state.todos}/>
-          <TodoForm addTask={this.addTask} />
+          <TodoList 
+            todos={this.state.todos} 
+            toggleTask={this.toggleTask}
+          />
+          <TodoForm 
+            addTask={this.addTask} 
+            clearCompleted={this.clearCompleted}
+          />
         </div>
       </div>
     );

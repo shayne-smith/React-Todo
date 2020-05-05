@@ -10,7 +10,11 @@ const TodoList = props => {
     return (
         <div className='todo-list'>
             {props.todos.map(todo => (
-                <Todo key={todo.id} todo={todo} onClick={props.toggleTask} />
+                <Todo 
+                    key={todo.id} 
+                    todo={todo} 
+                    toggleTask={props.toggleTask} 
+                />
             ))}
         </div>
     );
