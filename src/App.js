@@ -29,14 +29,17 @@ class App extends React.Component {
   };
 
   addTask = taskName => {
-    const newTask = {
-      task: taskName,
-      id: Date.now(),
-      completed: false,
-    };
-    this.setState({
-      todos: [...this.state.todos, newTask]
-    });
+    console.log('ss: index.js: App: addTask: taskName', taskName)
+    if (taskName) {
+      const newTask = {
+        task: taskName,
+        id: Date.now(),
+        completed: false,
+      };
+      this.setState({
+        todos: [...this.state.todos, newTask]
+      });
+    }
   };
 
   toggleTask = taskId => {
@@ -68,14 +71,19 @@ class App extends React.Component {
       <div className='App'>
         <div className='header'>
           <h1>Shayne's MVP Todo List!!</h1>
+        </div>
+        <div className='todo-form-container'>
+          <h2>Todo Form</h2>
+          <TodoForm 
+            addTask={this.addTask} 
+            clearCompleted={this.clearCompleted}
+          />
+        </div>
+        <div className='todo-list-container'>
           <h2>Todo List</h2>
           <TodoList 
             todos={this.state.todos} 
             toggleTask={this.toggleTask}
-          />
-          <TodoForm 
-            addTask={this.addTask} 
-            clearCompleted={this.clearCompleted}
           />
         </div>
       </div>
