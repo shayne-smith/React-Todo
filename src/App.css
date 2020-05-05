@@ -44,6 +44,7 @@ button {
     height: 2rem;
     background-color: #816F68;
     color: #f5f6fa;
+    
 }
 
 button:hover {
@@ -69,6 +70,7 @@ button:hover {
     width: 20%;
     text-align: center;
     margin: 1rem;
+    border: 2px solid whitesmoke;
 }
 
 .todo-list .task p {
